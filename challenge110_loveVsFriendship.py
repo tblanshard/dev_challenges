@@ -24,8 +24,6 @@ def wordsToMarksv1(word):
 
 #my improved solution
 def wordsToMarks(word):
-    letters = list(word)
-    total = reduce((lambda x,y: x+y), map((lambda x: ord(x) - 96), letters))
-    print(total)
+    print(reduce((lambda x,y: x+y), map((lambda x: ord(x) - 96), list(word))))
 
 test_calls()
