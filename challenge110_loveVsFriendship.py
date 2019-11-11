@@ -3,6 +3,8 @@
 # and f + r + i + e + n + d + s + h + i + p = 108
 # write a function to find the "strength" of each of these values
 
+from functools import reduce
+
 def test_calls():
     wordsToMarks("love")
     wordsToMarks("friendship")
@@ -12,11 +14,16 @@ def test_calls():
     wordsToMarks("selflessness")
     wordsToMarks("knowledge")
 
-def wordsToMarks(word):
+def wordsToMarksv1(word):
     total = 0
     letters = list(word)
     for letter in letters:
         total += (ord(letter) - 96)
+    print(total)
+
+def wordsToMarks(word):
+    letters = list(word)
+    total = reduce((lambda x,y: x+y), map((lambda x: ord(x) - 96), letters))
     print(total)
 
 test_calls()
