@@ -14,6 +14,7 @@ def test_calls():
     wordsToMarks("selflessness")
     wordsToMarks("knowledge")
 
+#my initial solution
 def wordsToMarksv1(word):
     total = 0
     letters = list(word)
@@ -21,6 +22,7 @@ def wordsToMarksv1(word):
         total += (ord(letter) - 96)
     print(total)
 
+#my improved solution
 def wordsToMarks(word):
     letters = list(word)
     total = reduce((lambda x,y: x+y), map((lambda x: ord(x) - 96), letters))
